@@ -39,8 +39,8 @@ def calculate_payroll(employees):
     # and display the monthly salary of each employee,
     # and add the monthly salary to the total for this month
     for employee in employees:
-        salary = round(employee.salary / 12, 2) + employee.monthly_bonus
-        print(employee.name.capitalize() + "'s salary is: $" + str(salary))
+        salary = round(employee.salary / 12 + employee.monthly_bonus, 2)
+        print(f'{employee.name.capitalize()} salary is {salary}')
         total += salary
 
     # Display the total 
