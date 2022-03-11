@@ -1,6 +1,3 @@
-from curses.ascii import isalpha
-
-
 class Backpack:
 
     max_num_items = 10
@@ -14,11 +11,12 @@ class Backpack:
         return self._items
     
     def set_items(self, item):
-        if isinstance(item, str) and isalpha(item):
+        if isinstance(item, str) and item.isalpha():
             self._items.append(item)
         else:
             print("That's not a real item")
 
 my_bag = Backpack('red', 14)
-my_bag.items.append('pencil')
-print(my_bag.items)
+print(my_bag.get_items())
+my_bag.set_items('Scissors')
+print(my_bag.get_items())
