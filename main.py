@@ -18,7 +18,10 @@ class Backpack:
     
     def add_multiple_items(self, lst):
         for i in lst:
-            self.add_item(i)
+            if len(self._items) < self.max_num_items:
+                self.add_item(i)
+            else:
+                print('Backpack is full')
 
     def remove_item(self, item):
         if item in self._items:
