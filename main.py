@@ -15,6 +15,10 @@ class Backpack:
             self._items.append(item)
         else:
             print("Please enter a valid item")
+    
+    def add_multiple_items(self, lst):
+        for i in lst:
+            self.add_item(i)
 
     def remove_item(self, item):
         if item in self._items:
