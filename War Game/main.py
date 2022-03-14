@@ -1,15 +1,5 @@
 # War game Deck: 52 cards, Suits: 'Clubs', 'Diamond', 'Hearts' or 'Spades'
-
-class Card:
-    suit = Suit()
-    
-    value = ''
-
-    def show(self):
-        return self.value
-
-    def is_special(self):
-        return self.value in [11, 12, 13, 14]
+import Suit, Card
 
 class Deck:
     _cards = []
