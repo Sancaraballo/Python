@@ -10,13 +10,18 @@ class Backpack:
     def get_items(self):
         return self._items
     
-    def set_items(self, item):
+    def add_item(self, item):
         if isinstance(item, str) and item.isalpha():
             self._items.append(item)
         else:
-            print("That's not a real item")
+            print("Please enter a valid item")
 
-my_bag = Backpack('red', 14)
-print(my_bag.get_items())
-my_bag.set_items('Scissors')
-print(my_bag.get_items())
+    def remove_item(self, item):
+        if item in self._items:
+            self._items.remove(item)
+            return 1
+        else:
+            return 0
+
+    def has_item(self, item):
+        return item in self._items
