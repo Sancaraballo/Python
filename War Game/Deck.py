@@ -1,4 +1,5 @@
-import Card, Suit
+from Card import Card
+from Suit import Suit
 import random
 
 class Deck:
@@ -9,7 +10,7 @@ class Deck:
         self._cards = []
 
         if  not is_empty:
-            self.buil()
+            self.build()
 
     @property
     def size(self):
