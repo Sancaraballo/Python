@@ -37,10 +37,10 @@ class WarCardGame:
         winner = self.get_round_winner(player_card, computer_card)
         cards_won = self.get_cards_won(player_card, computer_card, cards_from_war)
 
-        if winner = WarCardGame.PLAYER:
+        if winner == WarCardGame.PLAYER:
             print("\n You won this round!")
             self.add_cards_to_character(self._player, cards_won)
-        elif winner = WarCardGame.COMPUTER:
+        elif winner == WarCardGame.COMPUTER:
             print('\n The Computer won this round')
             self.add_cards_to_character(self._computer, cards_won)
         else:
