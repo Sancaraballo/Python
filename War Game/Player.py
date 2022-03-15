@@ -8,6 +8,10 @@ class Player:
     @property
     def is_computer(self):
         return self._is_computer
+    
+    @property
+    def deck(self):
+        return self._deck
 
     def has_empty_deck(self):
         return self._deck.size == 0
@@ -21,4 +25,3 @@ class Player:
     def add_card(self, card):
         self._deck.add(card)
 
-    

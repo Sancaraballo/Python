@@ -19,14 +19,14 @@ class WarCardGame:
 
     def make_deck(self, character):
         for i in range(26):
-            card = self._deck.draw()
+            card = self._deck.take_draw()
             character.add_card(card)
 
     def start_battle(self, cards_from_war=None):
         print("Let's Start the Battle")
 
-        player_card = self._player_deck.draw_card()
-        computer_card = self._computer.deck.draw_card()
+        player_card = self._player.deck.take_card()
+        computer_card = self._computer.deck.take_card()
 
         print('Your Card:')
         player_card.show()
@@ -74,3 +74,26 @@ class WarCardGame:
 
         for i in range(3):
             player_card = self._player.draw_card()
+            computer_card = self._computer.draw_card()
+
+            player_cards.append(player_card)
+            computer_cards.append(computer_card)
+
+        print('Six hidden cards: XXX XXX')
+    
+        self.start_battle(player_cards + computer_cards + cards_from_battle)
+
+    def check_game_over(self):
+        if self._player.has_empty_deck():
+            print('Computer wins')
+            return True
+        elif self._computer.has_empty_deck():
+            print('You are the winner, come again latter')
+            return True
+        else:
+            return False
+    
+    def print_stats(self):
+        print("\n----")
+        print(f'You have {self._player.deck.size} cards on your deck,\
+             whereas computer has {self._computer.deck.size}')
